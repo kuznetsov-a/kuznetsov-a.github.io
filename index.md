@@ -26,3 +26,14 @@ auth    required      pam_google_authenticator.so
 Otherwise you will get permission denied errors!
 
 3. Now, when you login using SSH, you should get your usual password prompt first, and then the OTP request 
+
+# Importing notebooks from Google Colab into your own Jupyter environment
+
+Sometimes you start working on a project in Colab and then need to bring it into your own Jupyter environment.
+
+In case if you have some complex visualisations, or just long outputs, you can  get an error like below
+```
+notebook validation failed: {'model_id': '44ec700bca7d481f94e3fbde738840c0', 'version_major': 2, 'version_minor': 0}
+```
+
+Just clear all outputs before saving the notebook again - the error will go away.
