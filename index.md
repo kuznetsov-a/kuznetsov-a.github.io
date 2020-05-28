@@ -37,3 +37,21 @@ notebook validation failed: {'model_id': '44ec700bca7d481f94e3fbde738840c0', 've
 ```
 
 Just clear all outputs before saving the notebook again - the error will go away.
+
+# Handling conflicting packages requirements when installing random libraries from GitHub
+
+1. First try installing with conda/pip in the desired environment
+1.1 When it fails due to conflicting packages requirement, review the installation logs to see what packages are clashing
+2. Clone the library from GitHub to your machine
+```
+git clone https://github.com/*
+```
+3. Find the cloned repo folder and edit *requirements.txt*
+ *A rule of a thumb is always change to the higher of the required version, as it is more likely to work*
+4. **Important** Ensure the right conda environment is activated and your path points to the right pip
+``` which pip ```
+5. Go to the cloned repo folder and install the "hacked" library
+```
+cd your-local-repo
+pip install -e .
+```
